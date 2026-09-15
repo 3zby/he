@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فعالية البرمجة وتعلمها | مدرسة الملك عبدالله الثاني للتميّز</title>
+<meta name="description" content="فعالية البرمجة وتعلمها — خطواتك الأولى نحو مستقبل تقني أوسع. تعلّم بايثون وجافاسكربت وتطوير الويب بتشغيل أكواد مباشرة وقوائم يوتيوب عربية.">
+<meta name="theme-color" content="#060a18">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+
+<!-- شاشة إقلاع -->
+<div class="boot" id="boot">
+  <div class="boot__code"><span id="bootText"></span><span class="cur"></span></div>
+  <div class="boot__bar"><i id="bootBar"></i></div>
+  <small>جارٍ تهيئة بيئة التعلّم…</small>
+</div>
+
+<div class="bg-fx"><div class="stars"></div></div>
+
+<!-- ============ شريط التنقل ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="index.html">
+      <span class="brand__mark"><svg class="ic"><use href="#i-code"/></svg></span>
+      <span>فعالية البرمجة<small>وتعلّمها</small></span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" class="active">الرئيسية</a>
+      <a href="#why">ليش البرمجة</a>
+      <a href="#fields">المجالات</a>
+      <a href="#paths">المسارات</a>
+      <a href="#faq">الأسئلة</a>
+      <a href="python.html">بايثون</a>
+      <a href="javascript.html">جافاسكربت</a>
+      <a href="web.html">تطوير الويب</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--gold btn--sm" href="#paths">ابدأ الآن <svg class="ic"><use href="#i-bolt"/></svg></a>
+      <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+        <svg class="ic"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="nav__mobile" id="navMobile">
+    <a href="index.html" class="active">الرئيسية</a>
+    <a href="#why">ليش البرمجة؟</a>
+    <a href="#impact">تأثير البرمجة</a>
+    <a href="#fields">مجالات استخدامها</a>
+    <a href="#paths">مسارات التعلّم</a>
+    <a href="#quiz">اختبر نفسك</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="python.html">مسار بايثون</a>
+    <a href="javascript.html">مسار جافاسكربت</a>
+    <a href="web.html">مسار تطوير الويب</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ الغلاف: بوستر الفعالية ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <span class="hero__badge"><i></i> النشاط الصيفي • نادي البرمجة</span>
+      <h1>
+        فعالية
+        <span class="l2 grad">البرمجة</span>
+        وتعلّمها
+      </h1>
+      <p class="hero__sub">
+        <span class="typing" id="typing" data-text="خطوتك الأولى نحو مستقبل تقني أوسع — من أول سطر كود إلى مشروعك الخاص."></span>
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="python.html">ابدأ الآن <svg class="ic"><use href="#i-play"/></svg></a>
+        <a class="btn btn--ghost" href="#paths">اختر مسارك</a>
+      </div>
+      <div class="hero__meta">
+        <span><svg class="ic"><use href="#i-grad"/></svg> لجميع المراحل الدراسية</span>
+        <span><svg class="ic"><use href="#i-terminal"/></svg> تشغيل أكواد بدون تثبيت</span>
+        <span><svg class="ic"><use href="#i-youtube"/></svg> شرح مرئي بالعربي</span>
+      </div>
+      <a class="scroll-cue" href="#why">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v14"/><path d="M6 11l6 6 6-6"/></svg>
+        <span>اكتشف الفعالية</span>
+      </a>
+    </div>
+
+    <div class="hero__media">
+      <div class="poster__glow"></div>
+      <figure class="poster" id="poster">
+        <img src="assets/img/hero.jpg" alt="بوستر فعالية البرمجة وتعلمها مع صورة المدرسة"
+             loading="eager" fetchpriority="high" id="heroImg">
+        <figcaption class="poster__cap">
+          <span>فعالية <b>البرمجة وتعلّمها</b></span>
+          <span class="mono">&lt;/&gt; 2026</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ شريط متحرك ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marquee">
+    <span><b>Python</b> بايثون</span>
+    <span><b>JavaScript</b> جافاسكربت</span>
+    <span><b>HTML · CSS</b> تطوير الويب</span>
+    <span><b>AI</b> الذكاء الاصطناعي</span>
+    <span><b>Games</b> تصميم الألعاب</span>
+    <span><b>Security</b> الأمن السيبراني</span>
+    <span><b>Data</b> تحليل البيانات</span>
+    <span><b>Apps</b> تطبيقات الموبايل</span>
+  </div>
+</div>
+
+<!-- ============ أرقام ============ -->
+<section class="section" style="padding-block:clamp(40px,6vw,64px)">
+  <div class="wrap">
+    <div class="stats" data-stagger>
+      <div class="stat"><b data-count="3" data-suffix="+" data-dec="0">0</b><span>لغات برمجة نتعلّمها</span></div>
+      <div class="stat"><b data-count="16" data-suffix="+" data-dec="0">0</b><span>كود جاهز للتشغيل</span></div>
+      <div class="stat"><b data-count="28" data-suffix="+" data-dec="0">0</b><span>درس ومرجع مرئي</span></div>
+      <div class="stat"><b data-count="100" data-suffix="%" data-dec="0">0</b><span>مجانًا ولجميع المستويات</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ليش البرمجة ============ -->
+<section class="section section--alt" id="why">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> السؤال الأهم</span>
+      <h2>ليش <span class="grad">البرمجة</span>؟</h2>
+      <p>مو بس مهارة تقنية… البرمجة طريقة تفكير. تعلّمك كيف تفكّك مشكلة كبيرة إلى خطوات صغيرة، ثم تبني لها حلًا يشتغل فعليًا.</p>
+    </div>
+
+    <div class="grid auto" data-stagger>
+      <article class="card">
+        <span class="card__num">01</span>
+        <div class="card__icon"><svg class="ic"><use href="#i-brain"/></svg></div>
+        <h3>تدرّبك على التفكير المنطقي</h3>
+        <p>كل برنامج هو سلسلة قرارات: إذا حدث كذا، اعمل كذا. هذه العادة تنعكس على دراستك وحياتك اليومية مباشرة.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">02</span>
+        <div class="card__icon"><svg class="ic"><use href="#i-briefcase"/></svg></div>
+        <h3>مطلوبة في سوق العمل</h3>
+        <p>أكثر الوظائف التقنية طلبًا تبدأ من أساس واحد: قدرتك على كتابة كود وتنفيذ فكرة. والراتبات فيها من الأعلى عالميًا.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">03</span>
+        <div class="card__icon"><svg class="ic"><use href="#i-rocket"/></svg></div>
+        <h3>تحوّلك من مستخدم إلى صانع</h3>
+        <p>بدل ما تكتفي بتطبيق جاهز، تصنع تطبيقك الخاص: موقع، لعبة، أداة تختصر وقتك، أو مشروع تخرّج.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">04</span>
+        <div class="card__icon"><svg class="ic"><use href="#i-target"/></svg></div>
+        <h3>تنمّي حل المشكلات</h3>
+        <p>الأخطاء (Bugs) تعلّمك الصبر والبحث والتجربة. مبرمج ناجح = شخص لا يخاف من رسالة خطأ حمراء.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">05</span>
+        <div class="card__icon"><svg class="ic"><use href="#i-users"/></svg></div>
+        <h3>لغة عالمية مشتركة</h3>
+        <p>الكود يُقرأ في كل دولته بنفس المعنى. تتعلمه مرة، ويتفتح لك مجتمع عالمي ضخم من المطورين والمشاريع المفتوحة.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">06</span>
+        <div class="card__icon"><svg class="ic"><use href="#i-clock"/></svg></div>
+        <h3>توفّر وقتك للأبد</h3>
+        <p>سكربت بسيط ينجز في ثوانٍ ما كنت ستكرره يدويًا لساعات: ترتيب ملفات، حساب درجات، إرسال رسائل.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ تأثير البرمجة ============ -->
+<section class="section" id="impact">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> الأثر</span>
+      <h2>تأثير البرمجة على <span class="hl">حياتنا ومستقبلنا</span></h2>
+      <p>من الجيب الذي تحمله إلى المستشفى الذي يُعالج فيه الناس — كل شيء خلفه سطر كود.</p>
+    </div>
+
+    <div class="grid g2" style="align-items:start">
+      <div class="card" style="padding:clamp(24px,4vw,34px)">
+        <h3 style="margin-top:0">أثرها علينا اليوم</h3>
+        <div class="mini" style="margin-top:16px">
+          <div class="mini__row"><b>التعليم</b><span>منصات ومختبرات افتادية وتجارب محاكاة تجعل المادة المرئية أسهل.</span></div>
+          <div class="mini__row"><b>الصحة</b><span>أجهزة تشخيص، وتحليل صور طبية، وتطبيقات متابعة المريض عن بُعد.</span></div>
+          <div class="mini__row"><b>الاقتصاد</b><span>تجارة إلكترونية، بنوك رقمية، وأنظمة دفع تعمل لحظة بلحظة.</span></div>
+          <div class="mini__row"><b>الخدمات</b><span>حكومة إلكترونية: معاملة تنجز من بيتك بدل يوم كامل من الانتظار.</span></div>
+          <div class="mini__row"><b>الترفيه</b><span>ألعاب، بث فيديو، وتوصيات ذكية تفهم ذوقك قبل أن تعرفه.</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:clamp(24px,4vw,34px)">
+        <h3 style="margin-top:0">مؤشرات تشرح الصورة</h3>
+        <div id="bars" style="display:grid; gap:18px; margin-top:18px">
+          <div class="prog" data-value="88"><span class="prog__t">الوظائف المستقبلية تتطلب مهارات رقمية</span><div class="bar"><i></i></div><b class="prog__v mono">88%</b></div>
+          <div class="prog" data-value="72"><span class="prog__t">من الشركات توسّع استثمارها في البرمجيات</span><div class="bar"><i></i></div><b class="prog__v mono">72%</b></div>
+          <div class="prog" data-value="65"><span class="prog__t">من طلاب اليوم في وظائف لم توجد بعد</span><div class="bar"><i></i></div><b class="prog__v mono">65%</b></div>
+          <div class="prog" data-value="45"><span class="prog__t">توفير في الوقت عند أتمتة المهام المتكررة</span><div class="bar"><i></i></div><b class="prog__v mono">45%</b></div>
+        </div>
+        <p style="margin:18px 0 0; color:var(--muted-2); font-size:.82rem">
+          النسب تقديرية ولغرض التوضيح داخل الفعالية — يمكن تحديثها بأرقام المصدر الرسمي المعتمد لدى المدرسة.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ المجالات ============ -->
+<section class="section section--alt" id="fields">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> وين تُستخدم؟</span>
+      <h2>مجالات يستخدم فيها <span class="grad">الكود</span></h2>
+      <p>اختر المجال الذي يحمّسك، وابدأ منه. كل باب من هذه الأبواب له لغة وأدوات خاصة.</p>
+    </div>
+
+    <div class="grid auto" data-stagger>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-globe"/></svg></div><h3>تطوير الويب</h3><p>مواقع وتطبيقات تعمل داخل المتصفح: واجهات أمامية وقواعد بيانات وخوادم.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-phone"/></svg></div><h3>تطبيقات الموبايل</h3><p>بناء تطبيقات أندرويد و iOS بلمسة واحدة، من فكرة إلى متجر التطبيقات.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-robot"/></svg></div><h3>الذكاء الاصطناعي</h3><p>تعلّم الآلة ومعالجة اللغة والرؤية الحاسوبية — وبايثون هي اللغة الأولى هنا.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-gamepad"/></svg></div><h3>تصميم الألعاب</h3><p>محركات ألعاب، فيزياء، رسومات ثلاثية الأبعاد، وسلوك شخصيات تفاعلي.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-shield"/></svg></div><h3>الأمن السيبراني</h3><p>حماية الأنظمة واكتشاف الثغرات — مجال مطلوب جدًا في كل مؤسسة.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-chart"/></svg></div><h3>تحليل البيانات</h3><p>تحويل الأرقام المبعثرة إلى قرارات: تقارير، رسوم، وتنبؤات دقيقة.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-cpu"/></svg></div><h3>إنترنت الأشياء</h3><p>برمجة الأجهزة والحساسات: منزل ذكي، روبوت، سيّارة، ومزارع موصولة.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-heart"/></svg></div><h3>البرمجة للمجتمع</h3><p>تطبيقات تعليمية وصحية وخدمية تحل مشاكل حقيقية حولك في مدرستك وحيّك.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ المسارات: المربعات الفخمة ============ -->
+<section class="section" id="paths">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> اختر مسارك</span>
+      <h2>ثلاثة <span class="grad">مربعات</span>… وثلاثة مستقبلات</h2>
+      <p>كل مسار فيه مشغّل أكواد جاهز يشتغل من المتصفح مباشرة، وشرح مرئي بالعربي، وخطوات مرتّبة من الصفر.</p>
+    </div>
+
+    <div class="paths" data-stagger>
+      <article class="path path--py">
+        <div class="path__logo">Py</div>
+        <span class="tag">الأسهل للبداية</span>
+        <h3>تعلّم بايثون</h3>
+        <p style="margin:0;color:var(--muted)">لغة نظيفة تُشبه اللغة الإنجليزية. تبدأ بها لتفهم المتغيرات والحلقات والدوال، ثم تصنع أدوات حقيقية.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>مشغّل بايثون داخل الصفحة</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>8 أكواد جاهزة للتجربة</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>قائمة شرح مرئي بالعربي</span></li>
+        </ul>
+        <div class="path__meta"><span>⏱ 4 أسابيع</span><span>★ مبتدئ</span></div>
+        <a class="btn btn--gold" href="python.html">ابدأ مسار بايثون <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="path path--js">
+        <div class="path__logo">JS</div>
+        <span class="tag">لغة المتصفح</span>
+        <h3>تعلّم جافاسكربت</h3>
+        <p style="margin:0;color:var(--muted)">اللغة التي تُحرّك كل موقع تزوره. تعلّمها وتشاهد النتيجة فورًا: أزرار، نوافذ، ألعاب وحركات.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>مشغّل JavaScript حقيقي</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>أمثلة تفاعلية على الصفحة</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>قائمة شرح مرئي بالعربي</span></li>
+        </ul>
+        <div class="path__meta"><span>⏱ 5 أسابيع</span><span>★ مبتدئ → متوسط</span></div>
+        <a class="btn btn--gold" href="javascript.html">ابدأ مسار جافاسكربت <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="path path--web">
+        <div class="path__logo">&lt;/&gt;</div>
+        <span class="tag">نتيجة تُرى بالعين</span>
+        <h3>تعلّم تطوير الويب</h3>
+        <p style="margin:0;color:var(--muted)">HTML للبناء، CSS للجمال، JavaScript للروح. محرّر مباشر يعرض موقعك وأنت تكتب.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>محرّر حي بمعاينة فورية</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>3 قوالب جاهزة للتعديل</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>أساسيات التصميم المتجاوب</span></li>
+        </ul>
+        <div class="path__meta"><span>⏱ 6 أسابيع</span><span>★ مشروع نهائي</span></div>
+        <a class="btn btn--gold" href="web.html">ابدأ مسار الويب <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ كيف تبدأ ============ -->
+<section class="section section--alt" id="start">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> خطة واضحة</span>
+      <h2>كيف <span class="hl">تبدأ</span> فعليًا؟</h2>
+      <p>أربع خطوات فقط. لا تحتاج جهازًا قويًا ولا حسابًا مدفوعًا — تحتاج بداية.</p>
+    </div>
+    <div class="steps" data-stagger>
+      <div class="step"><span class="step__n"></span><div><h4>اختر لغة واحدة والتزم بها</h4><p>ابدأ ببايثون إن كنت جديدًا تمامًا. لا تقفز بين اللغات قبل أن تكتب 100 سطر مفيد.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>شغّل الكود بيدك — لا تكتفِ بالمشاهدة</h4><p>استخدم المشغّلات في هذا الموقع، غيّر سطرًا، اكسده، أصلحه. هنا يحدث التعلّم الحقيقي.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>ابنِ مشروعًا صغيرًا كل أسبوع</h4><p>آلة حاسبة، قائمة مهام، موقع تعريفي عن مدرستك. المشاريع هي ما يفرق بين من يعرف ومن يمارس.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>انضم لمجتمع وسجّل ما تتعلمه</h4><p>شارك في نادي البرمجة، واكتب ملاحظاتك. ما تشرحه لغيرك هو ما تفهمه فعلًا.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ اختبار سريع ============ -->
+<section class="section" id="quiz">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> جرّب الآن</span>
+      <h2>اختبر <span class="grad">معلوماتك</span></h2>
+      <p>خمسة أسئلة سريعة قبل ما تبدأ — الإجابة الصحيحة تشرح لك السبب.</p>
+    </div>
+    <div class="quiz"><div class="quiz__card" id="quizCard">
+      <p class="quiz__q" id="quizQ">…</p>
+      <div class="quiz__opts" id="quizOpts"></div>
+      <p id="quizHint" style="min-height:1.6em;margin:16px 0 0;color:var(--muted);font-size:.93rem"></p>
+      <div class="quiz__foot">
+        <div class="bar"><i id="quizBar"></i></div>
+        <span class="quiz__score" id="quizScore">0 / 5</span>
+        <button class="btn btn--ghost btn--sm" id="quizNext" hidden>السؤال التالي <svg class="ic"><use href="#i-arrow"/></svg></button>
+        <button class="btn btn--gold btn--sm" id="quizRestart" hidden>إعادة الاختبار</button>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ الأسئلة الشائعة ============ -->
+<section class="section section--alt" id="faq">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> عندك سؤال؟</span>
+      <h2>الأسئلة <span class="hl">الشائعة</span></h2>
+      <p>أكثر ما يسأل عنه الطلاب قبل أول درس في البرمجة.</p>
+    </div>
+    <div class="faq" id="faqList">
+      <div class="faq__item">
+        <button class="faq__q"><span class="mark">+</span> ما عندي خلفية رياضية قوية، أقدر أتعلم؟</button>
+        <div class="faq__a"><p>نعم. البرمجة تعتمد على المنطق والترتيب أكثر من اعتمادها على الرياضيات المتقدمة. أساسيات العمليات والحساب تكفي، وكل شيء آخر تتعلمه بالممارسة.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q"><span class="mark">+</span> ما الجهاز الذي أحتاجه؟</button>
+        <div class="faq__a"><p>أي حاسب يعمل بمتصفح إنترنت يكفي للبداية — وحتى جوالك. مشغّلات الأكواد في هذا الموقع تعمل داخل المتصفح بدون تثبيت أي برنامج. بايثون الحقيقي تثبّته لاحقًا من python.org مجانًا.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q"><span class="mark">+</span> أبدأ ببايثون أم بجافاسكربت؟</button>
+        <div class="faq__a"><p>بايثون إن أردت فهم الأساسيات بهدوء (متغيرات، حلقات، دوال) والعمل في الذكاء الاصطناعي أو البيانات. وجافاسكربت إن كان تحفيزك يأتي من رؤية النتيجة أمامك مباشرة — لأنها تشغّل المواقع والتفاعلات داخل المتصفح.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q"><span class="mark">+</span> كم أحتاج وقت حتى أشتغل بها؟</button>
+        <div class="faq__a"><p>من 3 إلى 6 أشهر من الممارسة المنتظمة (ساعة يوميًا) لتبني مشاريع صغيرة وتنجز مهام حقيقية. المهم الانتظام وليس العدد الكبير من الساعات مرة واحدة.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q"><span class="mark">+</span> هل سيأخذ الذكاء الاصطناعي مكان المبرمجين؟</button>
+        <div class="faq__a"><p>الذكاء الاصطناعي يغيّر طريقة العمل: يكتب أجزاء ويشرح أخطاء ويسرّع الإنجاز. لكن من يفهم المشكلة ويصمم الحل ويقيّم الناتج هو المبرمج. تعلّم كيف تستخدمه بدل ما تخاف منه.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q"><span class="mark">+</span> أيش يعني Bug وليش كل شوي يطلع لي؟</button>
+        <div class="faq__a"><p>الـ Bug خطأ في الكود يمنع البرنامج من العمل كما تتوقع. ظهوره طبيعي جدًا — حتى للمحترفين. اقرأ رسالة الخطأ، حدّد السطر، جرّب حلًا صغيرًا، وابحث عن النص. هذه هي مهارة التصحيح نفسها.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q"><span class="mark">+</span> كيف أشارك في فعالية البرمجة بالمدرسة؟</button>
+        <div class="faq__a"><p>سجّل اسمك لدى مشرف النشاط، واحضر اجتماع النادي الأسبوعي. تختار مسارًا من المسارات الثلاثة، وتنفّذ مشروعًا صغيرًا تعرضه في ختام الفعالية.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ بانر الختام ============ -->
+<section class="section" style="padding-top:clamp(40px,6vw,70px)">
+  <div class="wrap">
+    <div class="card" style="padding:clamp(30px,6vw,56px);text-align:center;border-color:rgba(245,196,81,.3)">
+      <span class="kicker"><i></i> جاهز؟</span>
+      <h2 style="margin:14px 0 10px;font-size:clamp(1.5rem,4.6vw,2.5rem);font-weight:900">
+        أول سطر كود <span class="grad">يكتبه طالب مثلك</span>
+      </h2>
+      <p style="max-width:56ch;margin:0 auto 24px;color:var(--muted)">
+        لا تنتظر «الوقت المناسب». افتح مسار بايثون، اضغط زر <b class="hl">شغّل</b>، وشوف أول نتيجة من إبداعك.
+      </p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn--gold" href="python.html">ابدأ بمسار بايثون <svg class="ic"><use href="#i-play"/></svg></a>
+        <a class="btn btn--ghost" href="#paths">تصفّح كل المسارات</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ التذييل ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand__mark"><svg class="ic"><use href="#i-code"/></svg></span>
+          <span>فعالية البرمجة<small>وتعلّمها</small></span>
+        </a>
+        <p style="margin-top:14px">مشروع نشاط لا صفّي يهدف إلى نشر ثقافة البرمجة بين الطلاب، وتبسيطها بالتطبيق المباشر داخل المتصفح.</p>
+        <p class="mono" style="color:var(--muted-2);font-size:.82rem">learn: true · build: true · grow: true</p>
+      </div>
+      <div>
+        <h4>مسارات التعلّم</h4>
+        <ul>
+          <li><a href="python.html">تعلم بايثون</a></li>
+          <li><a href="javascript.html">تعلم جافاسكربت</a></li>
+          <li><a href="web.html">تعلم تطوير الويب</a></li>
+          <li><a href="#fields">مجالات استخدام البرمجة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>روابط الفعالية</h4>
+        <ul>
+          <li><a href="#why">ليش البرمجة؟</a></li>
+          <li><a href="#impact">تأثير البرمجة</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+          <li><a href="#top">العودة للأعلى</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>إشراف: <b>أ. محمد الحميني</b> • <b>أ. ماجد الزايدي</b></span>
+      <span>فعالية البرمجة وتعلّمها — مشروع مدرسي</span>
+    </div>
+  </div>
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="للأعلى"><svg class="ic"><use href="#i-up"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

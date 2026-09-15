@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسار بايثون | فعالية البرمجة وتعلّمها</title>
+<meta name="description" content="تعلّم بايثون داخل المتصفح: شغّل أكوادًا جاهزة، جرّب كتابتها بنفسك، وتابع قوائم شرح عربية على يوتيوب.">
+<meta name="theme-color" content="#060a18">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body data-lang="python">
+
+<div class="bg-fx"><div class="stars"></div></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="index.html">
+      <span class="brand__mark"><svg class="ic"><use href="#i-code"/></svg></span>
+      <span>فعالية البرمجة<small>وتعلّمها</small></span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">الرئيسية</a>
+      <a href="index.html#why">ليش البرمجة</a>
+      <a href="index.html#fields">المجالات</a>
+      <a href="index.html#faq">الأسئلة</a>
+      <a href="python.html" class="active">بايثون</a>
+      <a href="javascript.html">جافاسكربت</a>
+      <a href="web.html">تطوير الويب</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--gold btn--sm" href="#play">شغّل كود <svg class="ic"><use href="#i-terminal"/></svg></a>
+      <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+        <svg class="ic"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="nav__mobile" id="navMobile">
+    <a href="index.html">الرئيسية</a>
+    <a href="#play">مشغّل بايثون</a>
+    <a href="#videos">قوائم الشرح</a>
+    <a href="#roadmap">خطة 4 أسابيع</a>
+    <a href="#where">أين تُستخدم بايثون</a>
+    <a href="javascript.html">مسار جافاسكربت</a>
+    <a href="web.html">مسار تطوير الويب</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ رأس الصفحة ============ -->
+<section class="pagehead">
+  <div class="wrap">
+    <div class="logo">Py</div>
+    <span class="kicker"><i></i> المسار الأول • الأسهل للبداية</span>
+    <h1>تعلّم <span class="grad">بايثون</span> وأنت تكتب</h1>
+    <p>بايثون لغة نظيفة تُشبه اللغة الإنجليزية — مثالية لأول تجربة برمجة. في هذه الصفحة مشغّل يعمل داخل متصفحك مباشرة: اختر مثالًا، اضغط <b class="hl">شغّل</b>، وشوف النتيجة فورًا.</p>
+    <div class="tabs">
+      <a class="btn btn--gold btn--sm" href="#play">ابدأ بتشغيل كود <svg class="ic"><use href="#i-play"/></svg></a>
+      <a class="btn btn--ghost btn--sm" href="#videos">قوائم الشرح</a>
+      <a class="btn btn--ghost btn--sm" href="#roadmap">خطة التعلّم</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ المشغّل ============ -->
+<section class="section" id="play" style="padding-top:clamp(34px,5vw,56px)">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> طبّق الآن</span>
+      <h2>مشغّل <span class="hl">بايثون</span> داخل الصفحة</h2>
+      <p>٨ أكواد جاهزة للتجربة. غيّر أي سطر كما تريد — الكود لا يتلف.</p>
+    </div>
+
+    <div class="snippets" id="snippets"></div>
+
+    <div class="btn-row" style="justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div style="display:flex;gap:9px;flex-wrap:wrap">
+        <button class="chip active" data-mode="real">🌐 بايثون الحقيقي (Pyodide)</button>
+        <button class="chip" data-mode="sim">⚡ وضع المحاكاة (بدون إنترنت)</button>
+      </div>
+      <span id="status" class="mono" style="font-size:.78rem;color:var(--muted-2)"></span>
+    </div>
+
+    <div class="play">
+      <div class="editor">
+        <div class="editor__bar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="fname">main.py</span>
+          <span class="spacer"></span>
+          <span class="mono" style="font-size:.72rem;color:var(--muted-2)">Python 3</span>
+        </div>
+        <textarea id="code" spellcheck="false" aria-label="محرر كود بايثون"></textarea>
+        <div class="editor__foot">
+          <button class="btn btn--gold btn--sm" id="run"><svg class="ic"><use href="#i-play"/></svg> شغّل الكود</button>
+          <button class="btn btn--ghost btn--sm" id="clear">مسح النتيجة</button>
+          <button class="btn btn--ghost btn--sm" id="copy">نسخ الكود</button>
+          <button class="btn btn--ghost btn--sm" id="download">تنزيل .py</button>
+          <button class="btn btn--ghost btn--sm" id="reset">مثال أول</button>
+        </div>
+      </div>
+
+      <div class="output">
+        <div class="output__bar">
+          <span class="fname">🖥 شاشة الإخراج — Output</span>
+          <span class="spacer"></span>
+          <span class="mono" style="font-size:.72rem;color:var(--muted-2)">Ctrl + Enter</span>
+        </div>
+        <div class="output__body" id="out" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:22px">
+      <div class="card"><h3 style="margin-top:0">🌐 الوضع الأول: بايثون الحقيقي</h3>
+        <p>يحمّل مترجم Python حقيقيًا داخل المتصفح (مرة واحدة فقط). يدعم كل شيء: الدوال، القواميس، المكتبات. يحتاج اتصال إنترنت.</p></div>
+      <div class="card"><h3 style="margin-top:0">⚡ الوضع الثاني: المحاكاة</h3>
+        <p>يعمل بدون إنترنت. يكفي لتجربة المتغيرات والعمليات والحلقات والشروط و f-string. لا يدعم <span class="mono">def</span> ولا الاستيراد.</p></div>
+      <div class="card"><h3 style="margin-top:0">💡 نصيحة للتعلم</h3>
+        <p>لا تقرأ الكود فقط — اكسره! غيّر رقمًا، احذف علامة، أضف سطرًا. رسالة الخطأ هي أفضل معلّم لديك.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ الفيديوهات ============ -->
+<section class="section section--alt" id="videos">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> تعلّم بالعين والأذن</span>
+      <h2 id="videoTitle">قوائم شرح بايثون بالعربي</h2>
+      <p>قوائم تشغيل عامة من قنوات معروفة — اضغط أي قائمة لتُشغَّل هنا مباشرة، أو افتحها في يوتيوب.</p>
+    </div>
+
+    <div class="videos">
+      <div class="player" id="player">
+        <div class="player__ph">
+          <svg class="ic" viewBox="0 0 24 24"><use href="#i-youtube"/></svg>
+          <p style="margin:0">اختر قائمة من الأسفل لتبدأ المشاهدة</p>
+        </div>
+      </div>
+      <div class="vid-grid" id="videoGrid"></div>
+    </div>
+
+    <div id="playlistSlot" style="margin-top:18px"></div>
+    <div id="videoLinks" style="margin-top:18px"></div>
+  </div>
+</section>
+
+<!-- ============ خطة 4 أسابيع ============ -->
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> من الصفر</span>
+      <h2>خطة <span class="grad">4 أسابيع</span> لإتقان الأساسيات</h2>
+      <p>ساعة واحدة يوميًا تكفي. المهم ألا تنقطع.</p>
+    </div>
+    <div class="steps" data-stagger>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 1 — الأساسيات</h4><p>المتغيرات، الأنواع (نص، رقم، منطقي)، الدوال الجاهزة مثل <span class="mono">print()</span> و <span class="mono">input()</span>، والعمليات الحسابية.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 2 — القرارات والحلقات</h4><p><span class="mono">if / elif / else</span>، وحلقة <span class="mono">for</span> مع <span class="mono">range()</span>، و <span class="mono">while</span>. ابنِ جدول الضرب ومحادمة بسيطة.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 3 — المجموعات والدوال</h4><p>القوائم <span class="mono">list</span>، النصوص ودوالها، ثم تعريف دوالك الخاصة بـ <span class="mono">def</span> مع المعاملات والإرجاع.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 4 — مشروع حقيقي</h4><p>اختر فكرة: آلة حاسبة، لعبة تخمين، منظّم مهام، أو برنامج يحسب معدلك. اعرضه في ختام الفعالية.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ أين تُستخدم ============ -->
+<section class="section section--alt" id="where">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> لماذا بايثون تحديدًا؟</span>
+      <h2>مجالات يتصدّرها <span class="hl">بايثون</span></h2>
+    </div>
+    <div class="grid auto" data-stagger>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-robot"/></svg></div><h3>الذكاء الاصطناعي</h3><p>كل أدوات تعلّم الآلة الكبرى (PyTorch, TensorFlow) مبنية على بايثون.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-chart"/></svg><h3>تحليل البيانات</h3><p>pandas و matplotlib تحوّل جدولًا ضخمًا إلى قرار واضح ورسم مفهوم.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-database"/></svg></div><h3>أتمتة المهام</h3><p>رتّب ملفاتك، أعدّل 500 صورة، أو اجمع بيانات من موقع — بسكربت قصير.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-globe"/></svg></div><h3>خوادم المواقع</h3><p>أطر عمل مثل Django و Flask تبني مواقع كاملة وقواعد بيانات.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-cpu"/></svg></div><h3>الروبوتات والإنترنت الأشياء</h3><p>بايثون يعمل على Raspberry Pi للتحكم بحساسات ومحركات حقيقية.</p></article>
+      <article class="card"><div class="card__icon"><svg class="ic"><use href="#i-grad"/></svg></div><h3>البحث والدراسة</h3><p>اللغة الأولى في الجامعات والمختبرات — وكل معادلة علمية لها مكتبة جاهزة.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ الانتقال للمسار التالي ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="text-align:center;padding:clamp(28px,5vw,48px);border-color:rgba(247,223,30,.28)">
+      <span class="kicker"><i></i> أنهيت الأساسيات؟</span>
+      <h2 style="margin:14px 0 10px;font-size:clamp(1.4rem,4.4vw,2.3rem);font-weight:900">انتقل إلى <span class="grad">جافاسكربت</span></h2>
+      <p style="max-width:52ch;margin:0 auto 22px;color:var(--muted)">ستجد أن 70٪ مما تعلمته ينطبق عليها. الاختلاف أنها تُظهر نتيجتك على الشاشة مباشرة.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn--gold" href="javascript.html">ابدأ مسار جافاسكربت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="index.html#paths">كل المسارات</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand__mark"><svg class="ic"><use href="#i-code"/></svg></span>
+          <span>فعالية البرمجة<small>وتعلّمها</small></span>
+        </a>
+        <p style="margin-top:14px">مسار بايثون — أول خطوة في رحلتك البرمجية، بتطبيق مباشر من داخل المتصفح.</p>
+        <p class="mono" style="color:var(--muted-2);font-size:.82rem">print("Hello, World!")</p>
+      </div>
+      <div><h4>مسارات التعلّم</h4><ul>
+        <li><a href="python.html">تعلم بايثون</a></li>
+        <li><a href="javascript.html">تعلم جافاسكربت</a></li>
+        <li><a href="web.html">تعلم تطوير الويب</a></li>
+        <li><a href="index.html#fields">مجالات استخدام البرمجة</a></li>
+      </ul></div>
+      <div><h4>روابط سريعة</h4><ul>
+        <li><a href="#play">المشغّل</a></li>
+        <li><a href="#videos">قوائم الشرح</a></li>
+        <li><a href="#roadmap">خطة 4 أسابيع</a></li>
+        <li><a href="index.html#faq">الأسئلة الشائعة</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bar">
+      <span>إشراف: <b>أ. محمد الحميني</b> • <b>أ. ماجد الزايدي</b></span>
+      <span>فعالية البرمجة وتعلّمها — مشروع مدرسي</span>
+    </div>
+  </div>
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="للأعلى"><svg class="ic"><use href="#i-up"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/playground.js"></script>
+</body>
+</html>

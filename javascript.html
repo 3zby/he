@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسار جافاسكربت | فعالية البرمجة وتعلّمها</title>
+<meta name="description" content="تعلّم JavaScript داخل المتصفح: شغّل أكوادًا جاهزة، عدّل الصفحة نفسها بالكود، وتابع قوائم شرح عربية على يوتيوب.">
+<meta name="theme-color" content="#060a18">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body data-lang="javascript">
+
+<div class="bg-fx"><div class="stars"></div></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="index.html">
+      <span class="brand__mark"><svg class="ic"><use href="#i-code"/></svg></span>
+      <span>فعالية البرمجة<small>وتعلّمها</small></span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">الرئيسية</a>
+      <a href="index.html#why">ليش البرمجة</a>
+      <a href="index.html#fields">المجالات</a>
+      <a href="index.html#faq">الأسئلة</a>
+      <a href="python.html">بايثون</a>
+      <a href="javascript.html" class="active">جافاسكربت</a>
+      <a href="web.html">تطوير الويب</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--gold btn--sm" href="#play">شغّل كود <svg class="ic"><use href="#i-terminal"/></svg></a>
+      <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false">
+        <svg class="ic"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="nav__mobile" id="navMobile">
+    <a href="index.html">الرئيسية</a>
+    <a href="#play">مشغّل جافاسكربت</a>
+    <a href="#sandbox">صندوق التجربة</a>
+    <a href="#videos">قوائم الشرح</a>
+    <a href="#roadmap">خطة 5 أسابيع</a>
+    <a href="python.html">مسار بايثون</a>
+    <a href="web.html">مسار تطوير الويب</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="pagehead pagehead--js">
+  <div class="wrap">
+    <div class="logo">JS</div>
+    <span class="kicker"><i></i> المسار الثاني • لغة المتصفح</span>
+    <h1>تعلّم <span class="grad">جافاسكربت</span> وشاهد النتيجة فورًا</h1>
+    <p>كل موقع تزوره يستخدم JavaScript: الأزرار، النوافذ، الحركات، والألعاب. هنا ستكتب كودًا يغيّر <b class="hl">هذه الصفحة نفسها</b> — لا يوجد شرح أقرب من التجربة.</p>
+    <div class="tabs">
+      <a class="btn btn--gold btn--sm" href="#play">ابدأ بتشغيل كود <svg class="ic"><use href="#i-play"/></svg></a>
+      <a class="btn btn--ghost btn--sm" href="#sandbox">صندوق التجربة</a>
+      <a class="btn btn--ghost btn--sm" href="#videos">قوائم الشرح</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ المشغّل ============ -->
+<section class="section" id="play" style="padding-top:clamp(34px,5vw,56px)">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> محرّر حيّ</span>
+      <h2>مشغّل <span class="hl">JavaScript</span></h2>
+      <p>٨ أمثلة متدرجة — من الطباعة إلى تعديل عناصر الصفحة. المحرّر يستخدم محرك متصفحك الحقيقي.</p>
+    </div>
+
+    <div class="snippets" id="snippets"></div>
+
+    <div class="btn-row" style="justify-content:space-between;align-items:center;margin-bottom:14px">
+      <span class="mono" style="font-size:.8rem;color:var(--muted-2)">Engine: V8 / محرك متصفحك • آخر إصدار</span>
+      <label style="display:flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted)">
+        مدخل تجريبي لـ prompt():
+        <input id="promptVal" value="10" style="width:80px;padding:7px 10px;border-radius:9px;background:#050a17;border:1px solid var(--line-2);color:var(--text);font-family:var(--mono)">
+      </label>
+    </div>
+
+    <div class="play">
+      <div class="editor">
+        <div class="editor__bar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="fname">script.js</span>
+          <span class="spacer"></span>
+          <span class="mono" style="font-size:.72rem;color:var(--muted-2)">JavaScript ES6+</span>
+        </div>
+        <textarea id="code" spellcheck="false" aria-label="محرر كود جافاسكربت"></textarea>
+        <div class="editor__foot">
+          <button class="btn btn--gold btn--sm" id="run"><svg class="ic"><use href="#i-play"/></svg> شغّل الكود</button>
+          <button class="btn btn--ghost btn--sm" id="stop"><svg class="ic"><use href="#i-stop"/></svg> إيقاف المؤقّتات</button>
+          <button class="btn btn--ghost btn--sm" id="clear">مسح النتيجة</button>
+          <button class="btn btn--ghost btn--sm" id="copy">نسخ الكود</button>
+          <button class="btn btn--ghost btn--sm" id="download">تنزيل .js</button>
+          <button class="btn btn--ghost btn--sm" id="reset">مثال أول</button>
+        </div>
+      </div>
+
+      <div class="output">
+        <div class="output__bar">
+          <span class="fname">🖥 Console — سجلّ المتصفح</span>
+          <span class="spacer"></span>
+          <span class="mono" style="font-size:.72rem;color:var(--muted-2)">Ctrl + Enter</span>
+        </div>
+        <div class="output__body" id="out" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ صندوق التجربة ============ -->
+<section class="section section--alt" id="sandbox">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> DOM</span>
+      <h2>صندوق <span class="grad">التجربة</span></h2>
+      <p>شغّل مثال «تعديل الصفحة (DOM)» أو «ربط زر بحدث» من الأعلى، ثم انزل إلى هنا وسترى الكود قد غيّر هذه العناصر فعلًا.</p>
+    </div>
+
+    <div class="grid g3" style="align-items:stretch">
+      <div class="card" style="display:grid;place-items:center;gap:18px">
+        <div id="jsBox" style="width:120px;height:120px;border-radius:26px;display:grid;place-items:center;font-weight:900;font-size:1.5rem;color:#231a02;background:linear-gradient(145deg,#f7df1e,#f5c451);transition:all .5s cubic-bezier(.2,.8,.2,1)">JS</div>
+        <p style="margin:0;text-align:center">مربّع يتغيّر لونه ودورانه بالكود</p>
+      </div>
+      <div class="card" style="display:grid;gap:16px;align-content:center">
+        <h3 style="margin:0">نص قابل للتعديل</h3>
+        <p id="jsOut" class="mono" style="margin:0;padding:14px;border-radius:12px;background:#050a17;border:1px dashed var(--line-2);color:var(--cyan);font-size:.85rem;direction:rtl">هذا النص لم يلمسه أي كود بعد…</p>
+      </div>
+      <div class="card" style="display:grid;gap:16px;align-content:center">
+        <h3 style="margin:0">زر مرتبط بحدث</h3>
+        <button id="jsBtn" style="padding:14px 22px;border-radius:14px;border:0;cursor:pointer;font-family:inherit;font-weight:900;font-size:1rem;background:linear-gradient(180deg,#ffdf9b,#f5c451);color:#231a02">اضغطني</button>
+        <p style="margin:0">الحدث <span class="mono">onclick</span> يستدعي دالة عند الضغط.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ الفيديوهات ============ -->
+<section class="section" id="videos">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> تعلّم بالعين والأذن</span>
+      <h2 id="videoTitle">قوائم شرح جافاسكربت بالعربي</h2>
+      <p>اضغط أي قائمة لتشتغل هنا مباشرة، أو افتحها في يوتيوب من الأزرار أسفل الصفحة.</p>
+    </div>
+
+    <div class="videos">
+      <div class="player" id="player">
+        <div class="player__ph">
+          <svg class="ic" viewBox="0 0 24 24"><use href="#i-youtube"/></svg>
+          <p style="margin:0">اختر قائمة من الأسفل لتبدأ المشاهدة</p>
+        </div>
+      </div>
+      <div class="vid-grid" id="videoGrid"></div>
+    </div>
+
+    <div id="playlistSlot" style="margin-top:18px"></div>
+    <div id="videoLinks" style="margin-top:18px"></div>
+  </div>
+</section>
+
+<!-- ============ خطة ============ -->
+<section class="section section--alt" id="roadmap">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><i></i> من الصفر إلى مشروع</span>
+      <h2>خطة <span class="hl">5 أسابيع</span> في جافاسكربت</h2>
+    </div>
+    <div class="steps" data-stagger>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 1 — لغة البرنامج</h4><p>المتغيرات <span class="mono">let / const</span>، الأنواع، العمليات، والنصوص القالبية <span class="mono">`مرحبًا ${name}`</span>.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 2 — المنطق</h4><p>الشروط، الحلقات، والدوال. اكتب دالة تحسب معدلك من مصفوفة درجات.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 3 — المصفوفات والكائنات</h4><p><span class="mono">map / filter / reduce</span>، ثم الكائنات <span class="mono">{ }</span> لتمثيل بيانات حقيقية.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 4 — التعامل مع الصفحة</h4><p>اختيار العناصر <span class="mono">querySelector</span>، تغيير المحتوى والأنماط، وربط الأحداث بالأزرار.</p></div></div>
+      <div class="step"><span class="step__n"></span><div><h4>الأسبوع 5 — مشروع تفاعلي</h4><p>قائمة مهام، لعبة ذاكرة، أو حاسبة — بنظرة واحدة على <span class="mono">localStorage</span> لحفظ البيانات.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ مقارنة ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="padding:clamp(26px,5vw,44px)">
+      <div class="head center" style="margin-bottom:26px">
+        <span class="kicker"><i></i> الفرق السريع</span>
+        <h2 style="font-size:clamp(1.3rem,4vw,2rem)">HTML و CSS و JavaScript — من يعمل ماذا؟</h2>
+      </div>
+      <div class="grid g3">
+        <div class="card"><span class="tag mono" style="color:var(--web)">HTML</span><h3>الهيكل</h3><p>يحدّد ما موجود: عنوان، فقرة، صورة، زر. مثل طوب البناء.</p></div>
+        <div class="card"><span class="tag mono" style="color:var(--violet)">CSS</span><h3>المظهر</h3><p>يحدّد كيف يبدو: الألوان، الخطوط، المسافات، والترتيب حسب حجم الشاشة.</p></div>
+        <div class="card"><span class="tag mono" style="color:var(--js)">JavaScript</span><h3>السلوك</h3><p>يحدّد ماذا يحدث: عند الضغط، عند الكتابة، وعند وصول البيانات.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ الانتقال ============ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="card" style="text-align:center;padding:clamp(28px,5vw,48px);border-color:rgba(255,107,107,.28)">
+      <span class="kicker"><i></i> الخطوة التالية</span>
+      <h2 style="margin:14px 0 10px;font-size:clamp(1.4rem,4.4vw,2.3rem);font-weight:900">اجمع الثلاثة في <span class="grad">مسار تطوير الويب</span></h2>
+      <p style="max-width:52ch;margin:0 auto 22px;color:var(--muted)">محرّر بثلاث لغات ومعاينة حيّة على يمينك — ابنِ أول صفحة لك اليوم.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn--gold" href="web.html">ابدأ مسار الويب <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="python.html">عودة إلى بايثون</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand__mark"><svg class="ic"><use href="#i-code"/></svg></span>
+          <span>فعالية البرمجة<small>وتعلّمها</small></span>
+        </a>
+        <p style="margin-top:14px">مسار جافاسكربت — اللغة التي تُحرّك الويب، وتحوّل الأفكار إلى تفاعلات تراها بعينك.</p>
+        <p class="mono" style="color:var(--muted-2);font-size:.82rem">console.log("Hello, World!");</p>
+      </div>
+      <div><h4>مسارات التعلّم</h4><ul>
+        <li><a href="python.html">تعلم بايثون</a></li>
+        <li><a href="javascript.html">تعلم جافاسكربت</a></li>
+        <li><a href="web.html">تعلم تطوير الويب</a></li>
+        <li><a href="index.html#fields">مجالات استخدام البرمجة</a></li>
+      </ul></div>
+      <div><h4>روابط سريعة</h4><ul>
+        <li><a href="#play">المشغّل</a></li>
+        <li><a href="#sandbox">صندوق التجربة</a></li>
+        <li><a href="#videos">قوائم الشرح</a></li>
+        <li><a href="index.html#faq">الأسئلة الشائعة</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bar">
+      <span>إشراف: <b>أ. محمد الحميني</b> • <b>أ. ماجد الزايدي</b></span>
+      <span>فعالية البرمجة وتعلّمها — مشروع مدرسي</span>
+    </div>
+  </div>
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="للأعلى"><svg class="ic"><use href="#i-up"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/playground.js"></script>
+</body>
+</html>
